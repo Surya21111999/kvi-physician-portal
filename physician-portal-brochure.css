@@ -1273,8 +1273,12 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-action-bar {
-  position: relative;
-  z-index: 1;
+  position: static !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1288,8 +1292,6 @@ body.kvi-brochure {
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
 }
 
 .kvi-brochure .rf-bar-left {
