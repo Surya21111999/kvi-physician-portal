@@ -97,11 +97,13 @@
 
           <div class="rf-field">
             <label for="refCredentials">Credentials <span class="rf-req">*</span></label>
+            <div class="rf-select-wrap">
             <select class="rf-select" id="refCredentials" name="refCredentials" required>
               <option value="">Select</option>
               <option>MD</option><option>DO</option><option>OD</option>
               <option>PA</option><option>NP</option><option>Other</option>
             </select>
+            </div>
           </div>
           <div class="rf-field">
             <label for="refEmail">Office Email <span class="rf-req">*</span></label>
@@ -155,11 +157,13 @@
           </div>
           <div class="rf-field">
             <label for="patientGender">Gender</label>
+            <div class="rf-select-wrap">
             <select class="rf-select" id="patientGender" name="patientGender">
               <option value="">Select</option>
               <option>Female</option><option>Male</option>
               <option>Non-binary</option><option>Prefer not to say</option>
             </select>
+            </div>
           </div>
           <div class="rf-field">
             <label for="patientPhone">Phone <span class="rf-req">*</span></label>
@@ -183,9 +187,11 @@
           </div>
           <div class="rf-field">
             <label for="interpreterNeeded">Interpreter Needed</label>
+            <div class="rf-select-wrap">
             <select class="rf-select" id="interpreterNeeded" name="interpreterNeeded">
               <option value="No">No</option><option value="Yes">Yes</option>
             </select>
+            </div>
           </div>
           <div class="rf-field" id="rf-lang-wrap" hidden>
             <label for="interpreterLanguage">Language</label>
@@ -313,6 +319,7 @@
         <div class="rf-g2">
           <div class="rf-field rf-g-full">
             <label for="coManagePostOp">Desired post-op co-management</label>
+            <div class="rf-select-wrap">
             <select class="rf-select" id="coManagePostOp" name="coManagePostOp">
               <option value="">Select</option>
               <option>Yes — I would like to co-manage post-op care</option>
@@ -320,9 +327,11 @@
               <option>Discuss with surgeon</option>
               <option>Not sure yet</option>
             </select>
+            </div>
           </div>
           <div class="rf-field rf-g-full">
             <label for="coManageNotes">Who should receive written clinical updates?</label>
+            <div class="rf-select-wrap">
             <select class="rf-select" id="coManageNotes" name="coManageNotes">
               <option value="">Select</option>
               <option>Referring doctor only</option>
@@ -330,6 +339,7 @@
               <option>Office manager only</option>
               <option>No updates needed</option>
             </select>
+            </div>
           </div>
         </div>
       </div>
