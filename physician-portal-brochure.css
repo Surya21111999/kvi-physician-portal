@@ -1816,6 +1816,9 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-simple-card {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.05),
@@ -1832,8 +1835,12 @@ body.kvi-brochure {
   border-color: rgba(212, 175, 55, 0.28);
 }
 
+.kvi-brochure .rf-simple-card > .rf-simple-h {
+  margin: 0;
+}
+
 .kvi-brochure .rf-simple-h {
-  margin: 0 0 18px;
+  margin: 0;
   font-family: "Playfair Display", "Libre Baskerville", Georgia, serif;
   font-size: clamp(1.05rem, 2.2vw, 1.28rem);
   font-weight: 700;
@@ -1854,6 +1861,34 @@ body.kvi-brochure {
 .kvi-brochure .rf-sub--tight {
   margin-top: 14px;
   margin-bottom: 10px;
+}
+
+.kvi-brochure .rf-simple-card .rf-sub {
+  margin: 0;
+}
+
+.kvi-brochure .rf-preferred-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.kvi-brochure .rf-field-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.kvi-brochure .rf-field-pair > .rf-field {
+  min-width: 0;
+}
+
+.kvi-brochure .rf-field-pair > .rf-field .rf-input {
+  width: 100%;
 }
 
 .kvi-brochure .rf-choice-stack {
@@ -1960,6 +1995,10 @@ body.kvi-brochure {
 }
 
 @media (max-width: 640px) {
+  .kvi-brochure .rf-field-pair {
+    grid-template-columns: 1fr;
+  }
+
   .kvi-brochure .rf-check-grid--clinical {
     grid-template-columns: 1fr;
   }

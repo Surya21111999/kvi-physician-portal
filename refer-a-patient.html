@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,700;1,700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260526">
+  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260527">
 </head>
 <body class="kvi-brochure">
 
@@ -77,7 +77,7 @@
         <label for="patientName">Patient name <span class="rf-req">*</span></label>
         <input class="rf-input" id="patientName" name="patientName" type="text" autocomplete="name" required>
       </div>
-      <div class="rf-g2">
+      <div class="rf-field-pair" role="group" aria-label="Date of birth or age and phone">
         <div class="rf-field">
           <label for="patientDobAge">DOB / age</label>
           <input class="rf-input" id="patientDobAge" name="patientDobAge" type="text" placeholder="e.g. 03/14/1985 or 39">
@@ -91,11 +91,13 @@
         <label for="patientEmail">Email <span class="rf-req">*</span></label>
         <input class="rf-input" id="patientEmail" name="patientEmail" type="email" autocomplete="email" required>
       </div>
-      <p class="rf-sub rf-sub--tight">Preferred location <span class="rf-req">*</span></p>
-      <div class="rf-choice-row" role="group" aria-label="Preferred location">
-        <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Beverly Hills"><span>Beverly Hills</span></label>
-        <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Westlake Village"><span>Westlake Village</span></label>
-        <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="First available"><span>First available</span></label>
+      <div class="rf-preferred-block">
+        <p class="rf-sub">Preferred location <span class="rf-req">*</span></p>
+        <div class="rf-choice-row" role="group" aria-label="Preferred location">
+          <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Beverly Hills"><span>Beverly Hills</span></label>
+          <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Westlake Village"><span>Westlake Village</span></label>
+          <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="First available"><span>First available</span></label>
+        </div>
       </div>
     </section>
 
