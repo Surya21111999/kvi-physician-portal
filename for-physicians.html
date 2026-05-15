@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:wght@700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260524">
+  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260525">
 </head>
 <body class="kvi-brochure">
 
@@ -21,7 +21,7 @@
     </a>
     <nav class="kh-nav" aria-label="Main navigation">
       <a class="kh-nav-link" href="https://khannainstitute.com/">Home</a>
-      <a class="kh-nav-link kh-nav-active" href="./for-physicians.html">For Physicians</a>
+      <a class="kh-nav-link kh-nav-active" href="/kvi-physician-portal/for-physicians">For Physicians</a>
       <a class="kh-nav-cta" href="tel:8052302126">(805) 230-2126</a>
     </nav>
   </div>
@@ -85,7 +85,7 @@
         <p class="fp-sched-note">Selections above are a quick worksheet only — finalize on the scheduler.</p>
 
         <div class="fp-btn-row">
-          <a class="fp-btn fp-btn--blue" id="fp-open-sched" href="./book-consultation">Open secure online scheduler</a>
+          <a class="fp-btn fp-btn--blue" id="fp-open-sched" href="/kvi-physician-portal/book-consultation">Open secure online scheduler</a>
         </div>
       </section>
 
@@ -101,8 +101,8 @@
         </ul>
 
         <div class="fp-btn-row">
-          <a class="fp-btn fp-btn--gold" href="./refer-a-patient">Refer a patient</a>
-          <a class="fp-btn fp-btn--outline" href="./refer-a-patient">Co-Management Portal</a>
+          <a class="fp-btn fp-btn--gold" href="/kvi-physician-portal/refer-a-patient">Refer a patient</a>
+          <a class="fp-btn fp-btn--outline" href="/kvi-physician-portal/refer-a-patient">Co-Management Portal</a>
         </div>
 
         <h3 class="fp-sub-h">Better communication</h3>
@@ -177,7 +177,7 @@
         </span>
       </div>
       <div class="fp-btn-row" style="justify-content:center;margin-top:22px;">
-        <a class="fp-btn fp-btn--gold" href="./refer-a-patient">Refer a patient now</a>
+        <a class="fp-btn fp-btn--gold" href="/kvi-physician-portal/refer-a-patient">Refer a patient now</a>
       </div>
     </div>
   </section>
@@ -199,9 +199,9 @@
       </div>
       <div class="kh-footer-col">
         <p class="kh-footer-col-h">Physician Portal</p>
-        <a href="./for-physicians.html">Physician Hub</a>
-        <a href="./refer-a-patient">Refer a Patient</a>
-        <a href="./book-consultation">Online Scheduling</a>
+        <a href="/kvi-physician-portal/for-physicians">Physician Hub</a>
+        <a href="/kvi-physician-portal/refer-a-patient">Refer a Patient</a>
+        <a href="/kvi-physician-portal/book-consultation">Online Scheduling</a>
       </div>
       <div class="kh-footer-col">
         <p class="kh-footer-col-h">Contact</p>
@@ -236,7 +236,7 @@
         if (typS && typS.value) p.set('fp_type', typS.value);
         var q = p.toString();
         e.preventDefault();
-        window.location.href = './book-consultation' + (q ? '?' + q : '');
+        window.location.href = '/kvi-physician-portal/book-consultation' + (q ? '?' + q : '');
       });
     }
 
