@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Deploy to GitHub Pages: commit local changes and push to origin.
+# Deploy to GitHub Pages: optionally commit, then always push (so unpushed commits still publish).
 # Usage (works without execute bit):
 #   bash deploy.sh
 #   bash deploy.sh "Fix nav links on for-physicians"
@@ -41,17 +41,17 @@ COMMIT_MSG="${1:-Deploy physician portal $(date -u +%Y-%m-%dT%H:%MZ)}"
 git add -A
 
 if git diff --cached --quiet; then
-  echo "Nothing to commit (working tree matches HEAD)."
-  exit 0
+  echo "Nothing new to commit (already matches last commit)."
+else
+  git commit -m "$COMMIT_MSG"
 fi
-
-git commit -m "$COMMIT_MSG"
 
 BRANCH="$(git symbolic-ref --short HEAD 2>/dev/null || true)"
 if [[ -z "$BRANCH" ]]; then
   BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 fi
 
+# Always push so earlier commits that never left your Mac still reach GitHub Pages.
 git push -u origin "$BRANCH"
 
 echo "Pushed branch '$BRANCH' to origin."
