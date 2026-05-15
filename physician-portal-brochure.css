@@ -16,6 +16,7 @@ body.kvi-brochure {
   margin: 0;
   font-family: "Montserrat", "DM Sans", system-ui, sans-serif;
   color: var(--kv-ink-soft);
+  color-scheme: dark;
   background-color: var(--kv-bg-deep);
   background-image:
     radial-gradient(ellipse 130% 80% at 10% -20%, rgba(45, 212, 191, 0.09), transparent 55%),
@@ -40,7 +41,8 @@ body.kvi-brochure {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 74px;
+  min-height: 92px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,9 +50,11 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .kh-logo img {
-  height: 52px;
+  height: 72px;
   width: auto;
+  max-width: min(280px, 52vw);
   display: block;
+  object-fit: contain;
   filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
 }
 
@@ -565,9 +569,11 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .kh-footer img {
-  height: 34px;
+  height: 52px;
   width: auto;
-  opacity: 0.9;
+  max-width: 220px;
+  object-fit: contain;
+  opacity: 0.95;
   margin-bottom: 14px;
   display: block;
 }
@@ -635,6 +641,15 @@ body.kvi-brochure {
   .kvi-brochure .kh-nav .kh-nav-link {
     display: none;
   }
+  .kvi-brochure .kh-logo img {
+    height: 58px;
+    max-width: min(240px, 48vw);
+  }
+  .kvi-brochure .kh-header-inner {
+    min-height: 78px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 @media (max-width: 780px) {
@@ -653,13 +668,13 @@ body.kvi-brochure {
 .kvi-brochure .rf-g2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px 18px;
+  gap: 22px 26px;
 }
 
 .kvi-brochure .rf-g3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px 16px;
+  gap: 18px 22px;
 }
 
 .kvi-brochure .rf-g-full {
@@ -669,26 +684,26 @@ body.kvi-brochure {
 .kvi-brochure .rf-field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 
 .kvi-brochure .rf-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 16px;
+  gap: 28px;
+  margin-top: 22px;
 }
 
 .kvi-brochure .rf-choice-col {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .kvi-brochure .rf-check-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 6px 10px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px 12px;
 }
 
 .kvi-brochure .rf-urgency-row {
@@ -852,7 +867,7 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-form-wrap {
-  padding: 8px 20px 120px;
+  padding: 16px 20px 168px;
 }
 
 .kvi-brochure details.rf-step {
@@ -863,7 +878,7 @@ body.kvi-brochure {
   );
   border: 1px solid var(--kv-outline);
   border-radius: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -880,7 +895,7 @@ body.kvi-brochure {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 20px;
+  padding: 18px 22px;
   user-select: none;
 }
 
@@ -944,25 +959,29 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-step-body {
-  padding: 4px 22px 26px;
+  padding: 18px 26px 34px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(3, 6, 12, 0.35);
 }
 
 .kvi-brochure .rf-sub {
+  margin: 26px 0 14px;
   color: rgba(251, 191, 36, 0.88);
 }
 
 .kvi-brochure .rf-sub:first-child {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .kvi-brochure .rf-divider {
-  border-top-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 28px 0;
 }
 
 .kvi-brochure .rf-field label {
-  color: rgba(248, 250, 252, 0.72);
+  color: rgba(248, 250, 252, 0.82);
+  line-height: 1.35;
 }
 
 .kvi-brochure .rf-req {
@@ -970,9 +989,10 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-hint {
-  font-size: 0.72rem;
-  color: rgba(148, 163, 184, 0.9);
-  line-height: 1.45;
+  font-size: 0.74rem;
+  color: rgba(186, 198, 216, 0.92);
+  line-height: 1.5;
+  margin-top: 2px;
 }
 
 .kvi-brochure .rf-hint a {
@@ -985,59 +1005,91 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-input,
-.kvi-brochure .rf-select,
 .kvi-brochure .rf-textarea {
-  background: rgba(6, 10, 18, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(10, 14, 22, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 11px;
   color: #f1f5f9;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.kvi-brochure .rf-input {
+  min-height: 48px;
+}
+
+.kvi-brochure .rf-textarea {
+  min-height: 132px;
+  padding-top: 14px;
+  resize: vertical;
+}
+
+.kvi-brochure .rf-select {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: rgba(10, 14, 22, 0.94);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23cbd5e1' stroke-width='1.75' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 11px;
+  color: #f1f5f9;
+  padding: 13px 44px 13px 16px;
+  min-height: 48px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  transition: border-color 0.18s, box-shadow 0.18s;
 }
 
 .kvi-brochure .rf-input::placeholder,
 .kvi-brochure .rf-textarea::placeholder {
-  color: rgba(148, 163, 184, 0.7);
-}
-
-.kvi-brochure .rf-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23e2e8f0' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color: rgba(163, 178, 202, 0.82);
 }
 
 .kvi-brochure .rf-select option {
-  background: #0b1120;
+  background-color: #0b1120;
   color: #e2e8f0;
 }
 
 .kvi-brochure .rf-input:hover,
 .kvi-brochure .rf-select:hover,
 .kvi-brochure .rf-textarea:hover {
-  border-color: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.32);
 }
 
 .kvi-brochure .rf-input:focus,
 .kvi-brochure .rf-select:focus,
 .kvi-brochure .rf-textarea:focus {
-  border-color: rgba(45, 212, 191, 0.55);
-  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2);
+  outline: none;
+  border-color: rgba(45, 212, 191, 0.65);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.22);
 }
 
-.kvi-brochure .rf-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.kvi-brochure .rf-hint {
-  color: rgba(148, 163, 184, 0.95);
-}
-
-.kvi-brochure .rf-hint a {
-  color: var(--kv-teal-bright);
+.kvi-brochure .rf-input:focus-visible,
+.kvi-brochure .rf-select:focus-visible,
+.kvi-brochure .rf-textarea:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.55);
+  outline-offset: 2px;
 }
 
 .kvi-brochure .rf-choice {
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 8px 11px;
-  border-radius: 7px;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 9px;
   cursor: pointer;
   font-size: 0.85rem;
   line-height: 1.35;
@@ -1108,9 +1160,9 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-file-note {
-  padding: 14px 16px;
-  margin-top: 14px;
-  border-radius: 7px;
+  padding: 16px 18px;
+  margin-top: 22px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
