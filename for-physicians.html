@@ -8,242 +8,11 @@
   <link rel="canonical" href="https://khannainstitute.com/for-physicians/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
-  <style>
-    /* ─── Reset ───────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    /* ─── Tokens ──────────────────────────────────── */
-    :root {
-      --navy:     #132844;
-      --navy-lt:  #1e3a5f;
-      --gold:     #c9a23a;
-      --gold-dk:  #b08a2a;
-      --gold-bg:  #faf5e8;
-      --gold-rim: rgba(201,162,58,0.28);
-      --blue:     #1b4fa8;
-      --blue-dk:  #163f88;
-      --ink:      #1a2035;
-      --muted:    #4a5568;
-      --line:     #e2e8f0;
-      --page-bg:  #f7f9fc;
-    }
-    body {
-      font-family: "DM Sans", system-ui, sans-serif;
-      color: var(--ink);
-      background: #fff;
-    }
-
-    /* ─── HEADER ──────────────────────────────────── */
-    .kh-header {
-      position: sticky; top: 0; z-index: 200;
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 1px 16px rgba(19,40,68,0.07);
-    }
-    .kh-header-inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 24px;
-      height: 74px; display: flex; align-items: center;
-      justify-content: space-between; gap: 16px;
-    }
-    .kh-logo img { height: 52px; width: auto; display: block; }
-    .kh-nav { display: flex; align-items: center; gap: 2px; }
-    .kh-nav-link {
-      padding: 8px 13px; font-size: 0.82rem; font-weight: 600;
-      color: var(--muted); text-decoration: none; border-radius: 7px;
-      transition: color .15s, background .15s;
-    }
-    .kh-nav-link:hover { color: var(--navy); background: #f0f4f8; }
-    .kh-nav-active { color: var(--navy); }
-    .kh-nav-cta {
-      margin-left: 10px; padding: 9px 18px; border-radius: 8px;
-      background: var(--gold); color: #fff; font-size: 0.8rem;
-      font-weight: 700; text-decoration: none; white-space: nowrap;
-      transition: background .15s, transform .12s;
-    }
-    .kh-nav-cta:hover { background: var(--gold-dk); transform: translateY(-1px); }
-
-    /* ─── TOP STRIP ───────────────────────────────── */
-    .fp-strip {
-      background: var(--navy); color: rgba(255,255,255,0.9);
-      text-align: center; padding: 9px 20px;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.07em; text-transform: uppercase;
-    }
-    .fp-strip a { color: var(--gold); text-decoration: none; margin-left: 10px; font-weight: 800; }
-    .fp-strip a:hover { text-decoration: underline; }
-
-    /* ─── LAYOUT ──────────────────────────────────── */
-    .fp-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-    /* ─── HERO ────────────────────────────────────── */
-    .fp-hero { padding: 52px 0 36px; }
-    .fp-hero h1 {
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
-      color: var(--navy); text-transform: uppercase;
-      letter-spacing: 0.03em; line-height: 1.15; font-weight: 700;
-      margin-bottom: 18px;
-    }
-    .fp-hero p { font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 860px; }
-    .fp-hero strong { color: var(--navy); font-weight: 600; }
-
-    /* ─── TWO-CARD GRID ───────────────────────────── */
-    .fp-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 22px; padding-bottom: 56px;
-    }
-    .fp-card {
-      background: var(--gold-bg); border: 1px solid var(--gold-rim);
-      border-radius: 12px; padding: 28px 26px 30px;
-      box-shadow: 0 4px 20px rgba(19,40,68,0.08);
-    }
-    .fp-card-h {
-      font-size: 0.78rem; font-weight: 800;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--navy); margin-bottom: 12px; line-height: 1.4;
-    }
-    .fp-card p {
-      font-size: 0.91rem; color: var(--muted);
-      line-height: 1.7; margin-bottom: 16px;
-    }
-
-    /* Scheduling select */
-    .fp-field-label {
-      display: block; font-size: 0.67rem; font-weight: 800;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--navy-lt); margin: 14px 0 5px;
-    }
-    .fp-select {
-      width: 100%; padding: 11px 36px 11px 12px;
-      border: 1px solid rgba(19,40,68,0.22); border-radius: 8px;
-      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23132844' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center;
-      appearance: none; font-family: inherit; font-size: 0.9rem;
-      color: var(--ink); cursor: pointer;
-      transition: border-color .15s;
-    }
-    .fp-select:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
-    .fp-sched-note {
-      font-size: 0.74rem; color: #64748b; font-style: italic;
-      margin-top: 12px; line-height: 1.5;
-    }
-
-    /* Bullet list */
-    .fp-list { list-style: none; padding: 0; margin: 0 0 16px; }
-    .fp-list li {
-      font-size: 0.91rem; color: var(--muted);
-      padding: 5px 0 5px 18px; position: relative; line-height: 1.6;
-    }
-    .fp-list li::before { content: "•"; position: absolute; left: 3px; color: var(--navy); font-weight: 900; }
-
-    .fp-sub-h {
-      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--navy);
-      margin: 20px 0 10px; padding-top: 18px;
-      border-top: 1px solid var(--gold-rim);
-    }
-
-    /* Buttons */
-    .fp-btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .fp-btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 12px 22px; border-radius: 8px; font-family: inherit;
-      font-weight: 700; font-size: 0.8rem; letter-spacing: 0.06em;
-      text-transform: uppercase; text-decoration: none;
-      border: 2px solid transparent; cursor: pointer;
-      transition: background .15s, transform .12s, box-shadow .12s;
-      white-space: nowrap;
-    }
-    .fp-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
-    .fp-btn--blue  { background: var(--blue);  color: #fff; border-color: var(--blue); }
-    .fp-btn--blue:hover  { background: var(--blue-dk); border-color: var(--blue-dk); }
-    .fp-btn--gold  { background: var(--gold);  color: #fff; border-color: var(--gold); }
-    .fp-btn--gold:hover  { background: var(--gold-dk); border-color: var(--gold-dk); }
-    .fp-btn--outline { background: transparent; color: var(--navy); border-color: var(--navy); }
-    .fp-btn--outline:hover { background: var(--navy); color: #fff; }
-
-    /* ─── COMMITMENT SECTION ──────────────────────── */
-    .fp-commit {
-      background: var(--page-bg); border-top: 1px solid var(--line);
-      padding: 60px 0 68px;
-    }
-    .fp-commit h2 {
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: clamp(1.3rem, 2.6vw, 1.85rem);
-      text-transform: uppercase; letter-spacing: 0.03em;
-      color: var(--navy); line-height: 1.2; font-weight: 700;
-      margin-bottom: 22px;
-    }
-    .fp-commit p { font-size: 0.97rem; line-height: 1.8; color: var(--muted); max-width: 860px; margin-bottom: 14px; }
-    .fp-commit strong { color: var(--navy); font-weight: 600; }
-    .fp-commit-list { list-style: none; padding: 0; margin: 16px 0 30px; }
-    .fp-commit-list li {
-      font-size: 0.96rem; color: var(--muted);
-      padding: 7px 0 7px 22px; position: relative; line-height: 1.6;
-    }
-    .fp-commit-list li::before {
-      content: "•"; position: absolute; left: 4px;
-      color: var(--gold); font-weight: 900; font-size: 1.15rem;
-    }
-
-    /* ─── LOCATIONS BAR ───────────────────────────── */
-    .fp-locs { background: var(--navy); }
-    .fp-locs-inner { display: flex; justify-content: center; flex-wrap: wrap; }
-    .fp-loc-item {
-      color: rgba(255,255,255,0.75); font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 16px 32px; border-right: 1px solid rgba(255,255,255,0.12);
-      transition: color .15s;
-    }
-    .fp-loc-item:last-child { border-right: none; }
-    .fp-loc-item:hover { color: var(--gold); }
-
-    /* ─── FOOTER ──────────────────────────────────── */
-    .kh-footer { background: #0d1f38; padding: 48px 24px 28px; }
-    .kh-footer-inner { max-width: 1100px; margin: 0 auto; }
-    .kh-footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 32px; padding-bottom: 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 24px;
-    }
-    .kh-footer img { height: 34px; filter: brightness(10); opacity: 0.85; margin-bottom: 14px; display: block; }
-    .kh-footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.65; }
-    .kh-footer-col-h {
-      font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
-    }
-    .kh-footer-col a {
-      display: block; font-size: 0.82rem;
-      color: rgba(255,255,255,0.55); text-decoration: none; line-height: 2;
-      transition: color .15s;
-    }
-    .kh-footer-col a:hover { color: var(--gold); }
-    .kh-footer-col span { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 2; }
-    .kh-footer-copy {
-      display: flex; justify-content: space-between; flex-wrap: wrap;
-      gap: 6px; font-size: 0.71rem; color: rgba(255,255,255,0.3);
-    }
-    .kh-footer-copy a { color: rgba(255,255,255,0.4); text-decoration: none; }
-    .kh-footer-copy a:hover { color: var(--gold); }
-
-    /* ─── RESPONSIVE ──────────────────────────────── */
-    @media (max-width: 720px) {
-      .fp-grid { grid-template-columns: 1fr; }
-      .fp-btn-row { flex-direction: column; }
-      .fp-hero { padding: 36px 0 24px; }
-      .kh-footer-grid { grid-template-columns: 1fr 1fr; }
-      .kh-nav .kh-nav-link { display: none; }
-    }
-    @media (max-width: 480px) {
-      .kh-footer-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:wght@700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./physician-portal-brochure.css">
 </head>
-<body>
+<body class="kvi-brochure">
 
-<!-- ═══ HEADER ══════════════════════════════════════ -->
 <header class="kh-header">
   <div class="kh-header-inner">
     <a class="kh-logo" href="https://khannainstitute.com/" aria-label="Khanna Vision Institute">
@@ -260,29 +29,27 @@
   </div>
 </header>
 
-<!-- ═══ TOP STRIP ════════════════════════════════════ -->
 <div class="fp-strip">
-  Seamless referrals &amp; scheduling for referring physicians — Beverly Hills &amp; Westlake Village.
+  Seamless referrals & scheduling for referring physicians — Beverly Hills & Westlake Village.
   <a href="https://khannainstitute.com/contact/">Contact us →</a>
 </div>
 
-<main>
+<main class="kv-main-pad">
   <div class="fp-wrap">
-
-    <!-- Hero -->
-    <section class="fp-hero">
-      <h1>Refer or schedule a patient<br>using our digital tools</h1>
-      <p>
+    <header class="kv-h1-rule">
+      <h1>Refer or schedule a patient</h1>
+      <div class="kv-rule" aria-hidden="true"></div>
+    </header>
+    <section class="fp-hero" aria-labelledby="fp-hero-desc">
+      <p id="fp-hero-desc">
         The team at Khanna Vision Institute is proud to offer a streamlined digital referral process.
         You now have the capability to <strong>refer your patients to us in a structured digital format</strong> —
         and for select appointments, you may also <strong>schedule your patient directly online</strong>.
       </p>
     </section>
 
-    <!-- Two-card grid -->
     <div class="fp-grid">
 
-      <!-- LEFT: Schedule -->
       <section class="fp-card" aria-labelledby="fp-sched-h">
         <h2 class="fp-card-h" id="fp-sched-h">Schedule online now — physician or patient</h2>
         <p>Book an appointment directly using our secure online scheduler. Prefer to call? Reach our referral coordination team at <strong>(805) 230-2126</strong>.</p>
@@ -324,14 +91,13 @@
         </div>
       </section>
 
-      <!-- RIGHT: Refer -->
       <section class="fp-card" aria-labelledby="fp-ref-h">
         <h2 class="fp-card-h" id="fp-ref-h">Refer a patient using our digital referral form</h2>
 
         <ul class="fp-list">
           <li>No physician portal login required</li>
           <li>HIPAA-aligned submission flow (hosted on your infrastructure)</li>
-          <li>Quick structured form for physician details, patient demographics &amp; consultation preferences</li>
+          <li>Quick structured form for physician details, patient demographics & consultation preferences</li>
           <li>Add clinical notes or additional details as needed</li>
           <li>Attach supporting notes before sending to your referrals coordinator</li>
         </ul>
@@ -351,13 +117,46 @@
       </section>
 
     </div>
-  </div><!-- /fp-wrap -->
 
-  <!-- Commitment section -->
+    <section class="fp-edu" aria-labelledby="fp-edu-h">
+      <h2 class="fp-edu-h" id="fp-edu-h">Physician education &amp; events</h2>
+      <p class="fp-edu-sub">Two quick tracks for your team — switch tabs to view details.</p>
+      <div class="fp-tabs" role="tablist" aria-label="Education tracks">
+        <button type="button" class="fp-tab" role="tab" id="tab-lunch" aria-controls="panel-lunch" aria-selected="true">7. Lunch &amp; learn</button>
+        <button type="button" class="fp-tab" role="tab" id="tab-cme" aria-controls="panel-cme" aria-selected="false">8. CME</button>
+      </div>
+      <div id="panel-lunch" class="fp-tab-panel" role="tabpanel" aria-labelledby="tab-lunch">
+        <h3>In-office or virtual lunch &amp; learn</h3>
+        <p>
+          Host a concise, clinically grounded session on advanced vision correction pathways (SMILE, EVO ICL, lens options, and co-management touchpoints).
+          Our team can tailor content to your referral patterns and bring materials that help your staff answer first-call questions with confidence.
+        </p>
+        <ul>
+          <li>Request a date via <a href="tel:8052302126" style="color:#5eead4;font-weight:700;">(805) 230-2126</a> or your KVI liaison.</li>
+          <li>Typical run-time: 45–60 minutes including Q&amp;A.</li>
+        </ul>
+      </div>
+      <div id="panel-cme" class="fp-tab-panel" role="tabpanel" aria-labelledby="tab-cme" hidden>
+        <h3>CME-aligned medical education</h3>
+        <p>
+          Curated updates on refractive surgery selection, IOL strategy, keratoconus stabilization, and integration with modern diagnostics — presented with clear,
+          evidence-forward framing suitable for busy specialists and comprehensive offices.
+        </p>
+        <ul>
+          <li>Audience: MD / OD physicians and aligned clinical leads.</li>
+          <li>Ask our team about upcoming sessions, specialty focus, and certificate details where applicable.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
   <section class="fp-commit" aria-labelledby="fp-commit-h">
     <div class="fp-wrap">
-      <h2 id="fp-commit-h">We are committed to helping<br>your patients feel and see their best</h2>
-      <p>
+      <header class="kv-h1-rule" style="padding-top:12px;">
+        <h2 id="fp-commit-h">We are committed to helping<br>your patients feel and see their best</h2>
+        <div class="kv-rule" aria-hidden="true"></div>
+      </header>
+      <p style="margin-top:22px;">
         Khanna Vision Institute works closely with optometrists, primary care physicians, and subspecialists across Greater Los Angeles.
         Our referral coordinators can assist with <strong>prioritized scheduling for complex cataract &amp; keratoconus pathways</strong>,
         concierge lens consultations, urgent triage escalation, coordination of ancillary testing, and post-operative
@@ -373,12 +172,19 @@
         <li>Procedure-specific consult templates (SMILE vs LASIK, EVO ICL candidacy)</li>
         <li>Ongoing updates for referring offices when clinically requested</li>
       </ul>
-      <a class="fp-btn fp-btn--gold" href="./refer-a-patient">Refer a patient now</a>
+      <div class="fp-callout">
+        <strong>Your referral relationship stays yours</strong>
+        <span style="font-size:0.9rem;line-height:1.6;display:block;color:rgba(248,250,252,0.9);">
+          Digital tools are here to reduce friction — not replace your clinical judgment or long-term stewardship of the patient.
+        </span>
+      </div>
+      <div class="fp-btn-row" style="justify-content:center;margin-top:22px;">
+        <a class="fp-btn fp-btn--gold" href="./refer-a-patient">Refer a patient now</a>
+      </div>
     </div>
   </section>
 </main>
 
-<!-- Locations bar -->
 <div class="fp-locs" role="complementary" aria-label="Office locations">
   <div class="fp-locs-inner">
     <span class="fp-loc-item">Beverly Hills</span>
@@ -386,7 +192,6 @@
   </div>
 </div>
 
-<!-- ═══ FOOTER ═══════════════════════════════════════ -->
 <footer class="kh-footer">
   <div class="kh-footer-inner">
     <div class="kh-footer-grid">
@@ -414,27 +219,48 @@
     </div>
     <div class="kh-footer-copy">
       <p>© 2026 Khanna Vision Institute. All rights reserved.</p>
-      <p><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a> &nbsp;·&nbsp; <a href="#">HIPAA Notice</a></p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a> · <a href="#">HIPAA Notice</a></p>
     </div>
   </div>
 </footer>
 
 <script>
   (function () {
-    var btn  = document.getElementById('fp-open-sched');
+    var btn = document.getElementById('fp-open-sched');
     var forS = document.getElementById('fp-for');
     var locS = document.getElementById('fp-loc');
     var typS = document.getElementById('fp-type');
-    if (!btn) return;
-    btn.addEventListener('click', function (e) {
-      var p = new URLSearchParams();
-      if (forS && forS.value) p.set('fp_for',  forS.value);
-      if (locS && locS.value) p.set('fp_loc',  locS.value);
-      if (typS && typS.value) p.set('fp_type', typS.value);
-      var q = p.toString();
-      e.preventDefault();
-      window.location.href = './book-consultation' + (q ? '?' + q : '');
+    if (btn) {
+      btn.addEventListener('click', function (e) {
+        var p = new URLSearchParams();
+        if (forS && forS.value) p.set('fp_for', forS.value);
+        if (locS && locS.value) p.set('fp_loc', locS.value);
+        if (typS && typS.value) p.set('fp_type', typS.value);
+        var q = p.toString();
+        e.preventDefault();
+        window.location.href = './book-consultation' + (q ? '?' + q : '');
+      });
+    }
+
+    var tabs = document.querySelectorAll('.fp-tab');
+    var panels = {
+      lunch: document.getElementById('panel-lunch'),
+      cme: document.getElementById('panel-cme')
+    };
+    function activate(key) {
+      tabs.forEach(function (t) {
+        var sel = t.id === (key === 'lunch' ? 'tab-lunch' : 'tab-cme');
+        t.setAttribute('aria-selected', sel ? 'true' : 'false');
+      });
+      if (panels.lunch) panels.lunch.hidden = key !== 'lunch';
+      if (panels.cme) panels.cme.hidden = key !== 'cme';
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        activate(t.id === 'tab-lunch' ? 'lunch' : 'cme');
+      });
     });
+    activate('lunch');
   })();
 </script>
 </body>
