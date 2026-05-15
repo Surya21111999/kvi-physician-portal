@@ -83,6 +83,12 @@ body.kvi-brochure {
   color: var(--kv-gold-rich);
 }
 
+/* Hide Procedures / About if older markup or CDN cache still includes them */
+.kvi-brochure .kh-nav .kh-nav-link[href*="procedures"],
+.kvi-brochure .kh-nav .kh-nav-link[href*="/about"] {
+  display: none !important;
+}
+
 .kvi-brochure .kh-nav-cta {
   margin-left: 10px;
   padding: 9px 18px;
