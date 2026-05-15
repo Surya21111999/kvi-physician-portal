@@ -1818,7 +1818,7 @@ body.kvi-brochure {
 .kvi-brochure .rf-simple-card {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 28px;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.05),
@@ -1870,8 +1870,26 @@ body.kvi-brochure {
 .kvi-brochure .rf-preferred-block {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   min-width: 0;
+}
+
+.kvi-brochure .rf-preferred-block > .rf-sub {
+  padding-top: 8px;
+}
+
+.kvi-brochure .rf-simple-card .rf-field {
+  gap: 16px;
+}
+
+.kvi-brochure .rf-simple-card .rf-field > label:first-of-type:not(.rf-choice) {
+  display: block;
+  padding-top: 12px;
+  margin-top: 2px;
+}
+
+.kvi-brochure .rf-simple-card > .rf-g2 {
+  padding-top: 8px;
 }
 
 .kvi-brochure .rf-field-pair {
