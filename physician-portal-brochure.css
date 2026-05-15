@@ -774,23 +774,31 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-breadcrumb {
+  background: linear-gradient(180deg, #101c30 0%, #0f2540 55%, #0e223c 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+  padding: 13px 0;
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.62);
+}
+
+.kvi-brochure .rf-breadcrumb-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
   flex-wrap: wrap;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(212, 175, 55, 0.08),
-    transparent
-  );
-  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
-  color: rgba(226, 232, 240, 0.55);
+  text-align: center;
 }
 
 .kvi-brochure .rf-breadcrumb a {
-  color: rgba(226, 232, 240, 0.6);
+  color: rgba(226, 232, 240, 0.72);
 }
 
 .kvi-brochure .rf-breadcrumb a:hover {
@@ -798,16 +806,26 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-breadcrumb .sep {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.22);
 }
 
 .kvi-brochure .rf-breadcrumb .cur {
   color: var(--kv-gold-rich);
 }
 
+.kvi-brochure .rf-refer-main {
+  padding-bottom: 48px;
+}
+
+.kvi-brochure .rf-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 .kvi-brochure .rf-hero {
   background: transparent;
-  padding: clamp(28px, 5vw, 44px) 24px 8px;
+  padding: clamp(28px, 5vw, 44px) 0 10px;
   text-align: center;
 }
 
@@ -842,18 +860,27 @@ body.kvi-brochure {
 
 .kvi-brochure .rf-hero-sub {
   color: var(--kv-muted);
-  max-width: 580px;
-  margin-top: 18px;
+  max-width: 38rem;
+  margin: 22px auto 0;
+  padding: 0 8px;
+  text-align: center;
+  line-height: 1.75;
 }
 
 .kvi-brochure .rf-hero-sub a {
   color: var(--kv-teal-bright);
+  font-weight: 600;
+}
+
+.kvi-brochure .rf-hero-sub a.rf-tel {
+  white-space: nowrap;
+  font-weight: 700;
 }
 
 .kvi-brochure .rf-phi-wrap {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 .kvi-brochure .rf-phi {
@@ -898,7 +925,8 @@ body.kvi-brochure {
 }
 
 .kvi-brochure .rf-form-wrap {
-  padding: 16px 20px 168px;
+  padding: 12px 0 168px;
+  margin: 0;
 }
 
 .kvi-brochure details.rf-step {
