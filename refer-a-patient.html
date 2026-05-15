@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,700;1,700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./physician-portal-brochure.css?v=20260515">
+  <link rel="stylesheet" href="./physician-portal-brochure.css?v=20260516">
 </head>
 <body class="kvi-brochure">
 
@@ -80,14 +80,14 @@
       </summary>
       <div class="rf-step-body">
         <div class="rf-g2">
-          <div class="rf-field">
-            <label for="refNpi">Referring Doctor NPI #</label>
-            <input class="rf-input" id="refNpi" name="refNpi" type="text"
-                   inputmode="numeric" placeholder="10-digit NPI" autocomplete="off">
-            <span class="rf-hint"><a href="https://npiregistry.cms.hhs.gov/" target="_blank" rel="noopener">Search NPI Registry →</a></span>
-          </div>
-          <div class="rf-field" style="justify-content:flex-end;">
-            <label class="rf-choice" style="margin-top:auto;">
+          <div class="rf-npi-block rf-g-full">
+            <div class="rf-field">
+              <label for="refNpi">Referring Doctor NPI #</label>
+              <input class="rf-input" id="refNpi" name="refNpi" type="text"
+                     inputmode="numeric" placeholder="10-digit NPI" autocomplete="off">
+              <span class="rf-hint"><a href="https://npiregistry.cms.hhs.gov/" target="_blank" rel="noopener">Search NPI Registry →</a></span>
+            </div>
+            <label class="rf-choice rf-choice--inline">
               <input type="checkbox" name="refNpiLetters" value="yes">
               <span>NPI contains letters</span>
             </label>
