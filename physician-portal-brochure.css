@@ -1809,3 +1809,158 @@ body.kvi-brochure {
     padding: 0 14px;
   }
 }
+
+/* ─── Referral worksheet — simplified single-page form ─── */
+.kvi-brochure .rf-page--wide {
+  max-width: 920px;
+}
+
+.kvi-brochure .rf-simple-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid var(--kv-outline);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  padding: 22px 20px 26px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.kvi-brochure .rf-simple-card:focus-within {
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+.kvi-brochure .rf-simple-h {
+  margin: 0 0 18px;
+  font-family: "Playfair Display", "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--kv-gold-rich);
+}
+
+.kvi-brochure .rf-simple-h-sub {
+  margin: 0 0 12px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.82);
+}
+
+.kvi-brochure .rf-sub--tight {
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+.kvi-brochure .rf-choice-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kvi-brochure .rf-choice-stack--compact {
+  gap: 8px;
+}
+
+.kvi-brochure .rf-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.kvi-brochure .rf-choice-row .rf-choice {
+  flex: 1 1 160px;
+}
+
+.kvi-brochure .rf-choice--indent {
+  margin-left: 18px;
+  max-width: calc(100% - 18px);
+}
+
+.kvi-brochure .rf-dx-proc {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+.kvi-brochure .rf-muted-note {
+  margin: 18px 0 0;
+  font-size: 0.78rem;
+  color: var(--kv-muted);
+  line-height: 1.55;
+}
+
+.kvi-brochure .rf-muted-note em {
+  color: rgba(226, 232, 240, 0.72);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.kvi-brochure .rf-file-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  background: rgba(8, 12, 22, 0.65);
+  color: rgba(226, 232, 240, 0.92);
+  font-family: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.kvi-brochure .rf-file-input::file-selector-button {
+  margin-right: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  background: linear-gradient(165deg, rgba(45, 212, 191, 0.18), rgba(30, 77, 99, 0.35));
+  color: #ecfeff;
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.kvi-brochure .rf-file-formats {
+  margin: 8px 0 6px;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: var(--kv-muted);
+  text-align: center;
+}
+
+.kvi-brochure .rf-textarea--short {
+  min-height: 96px;
+}
+
+.kvi-brochure .rf-check-grid--clinical {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+@media (min-width: 641px) {
+  .kvi-brochure .rf-page--wide .rf-g2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kvi-brochure .rf-page--wide .rf-g2--files {
+    align-items: start;
+  }
+
+  .kvi-brochure .rf-dx-proc {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .kvi-brochure .rf-check-grid--clinical {
+    grid-template-columns: 1fr;
+  }
+}

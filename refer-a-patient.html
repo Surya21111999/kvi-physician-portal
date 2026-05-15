@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,700;1,700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260525">
+  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260526">
 </head>
 <body class="kvi-brochure">
 
@@ -39,14 +39,14 @@
 </div>
 
 <main class="kv-main-pad rf-refer-main">
-<div class="rf-page">
+<div class="rf-page rf-page--wide">
 
 <div class="rf-hero">
   <div class="rf-hero-eyebrow">For Referring Providers</div>
   <h1>Physician Referral <em>Worksheet</em></h1>
   <div class="kv-rule" aria-hidden="true"></div>
   <p class="rf-hero-sub">
-    Complete all sections below. Patient?
+    Complete the fields below. Patient?
     <a href="/kvi-physician-portal/book-consultation">Schedule online</a>
     <span aria-hidden="true"> · </span>
     or call
@@ -66,290 +66,132 @@
 </div>
 
 <div class="rf-form-wrap">
-  <form id="rf-form" action="/api/physician-referral/submit" method="post" novalidate>
+  <form id="rf-form" action="/api/physician-referral/submit" method="post" enctype="multipart/form-data" novalidate>
     <input type="text" name="companyWebsite" value=""
       style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"
       tabindex="-1" autocomplete="off" aria-hidden="true">
 
-    <details class="rf-step" open>
-      <summary>
-        <span class="rf-step-num">1</span>
-        <span class="rf-step-title">Referring Provider Information</span>
-        <svg class="rf-step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="rf-step-body">
-        <div class="rf-g2">
-          <div class="rf-npi-block rf-g-full">
-            <div class="rf-field">
-              <label for="refNpi">Referring Doctor NPI #</label>
-              <input class="rf-input" id="refNpi" name="refNpi" type="text"
-                     inputmode="numeric" placeholder="10-digit NPI" autocomplete="off">
-              <span class="rf-hint"><a href="https://npiregistry.cms.hhs.gov/" target="_blank" rel="noopener">Search NPI Registry →</a></span>
-            </div>
-            <label class="rf-choice rf-choice--inline">
-              <input type="checkbox" name="refNpiLetters" value="yes">
-              <span>NPI contains letters</span>
-            </label>
-          </div>
+    <section class="rf-simple-card" aria-labelledby="rf-patient-h">
+      <h2 class="rf-simple-h" id="rf-patient-h">Patient details</h2>
+      <div class="rf-field rf-g-full">
+        <label for="patientName">Patient name <span class="rf-req">*</span></label>
+        <input class="rf-input" id="patientName" name="patientName" type="text" autocomplete="name" required>
+      </div>
+      <div class="rf-g2">
+        <div class="rf-field">
+          <label for="patientDobAge">DOB / age</label>
+          <input class="rf-input" id="patientDobAge" name="patientDobAge" type="text" placeholder="e.g. 03/14/1985 or 39">
+        </div>
+        <div class="rf-field">
+          <label for="patientPhone">Phone <span class="rf-req">*</span></label>
+          <input class="rf-input" id="patientPhone" name="patientPhone" type="tel" autocomplete="tel" required>
+        </div>
+      </div>
+      <div class="rf-field rf-g-full">
+        <label for="patientEmail">Email <span class="rf-req">*</span></label>
+        <input class="rf-input" id="patientEmail" name="patientEmail" type="email" autocomplete="email" required>
+      </div>
+      <p class="rf-sub rf-sub--tight">Preferred location <span class="rf-req">*</span></p>
+      <div class="rf-choice-row" role="group" aria-label="Preferred location">
+        <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Beverly Hills"><span>Beverly Hills</span></label>
+        <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Westlake Village"><span>Westlake Village</span></label>
+        <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="First available"><span>First available</span></label>
+      </div>
+    </section>
 
-          <div class="rf-field">
-            <label for="refDoctorName">Doctor Name <span class="rf-req">*</span></label>
-            <input class="rf-input" id="refDoctorName" name="refDoctorName" type="text" required>
+    <section class="rf-simple-card" aria-labelledby="rf-clinical-h">
+      <h2 class="rf-simple-h" id="rf-clinical-h">Diagnosis &amp; suggested procedure</h2>
+      <div class="rf-dx-proc">
+        <div>
+          <h3 class="rf-simple-h-sub">Diagnosis</h3>
+          <div class="rf-choice-stack">
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Myopia"><span>Myopia</span></label>
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Hyperopia"><span>Hyperopia</span></label>
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Astigmatism"><span>Astigmatism</span></label>
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Presbyopia"><span>Presbyopia</span></label>
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Keratoconus"><span>Keratoconus</span></label>
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Post LASIK ectasia"><span>Post LASIK ectasia</span></label>
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Cataract"><span>Cataract</span></label>
+            <label class="rf-choice"><input type="checkbox" name="diagnosis" value="Pterygium"><span>Pterygium</span></label>
           </div>
-          <div class="rf-field">
-            <label for="refPractice">Practice / Group Name</label>
-            <input class="rf-input" id="refPractice" name="refPractice" type="text">
-          </div>
-
-          <div class="rf-field">
-            <label for="refCredentials">Credentials <span class="rf-req">*</span></label>
-            <div class="rf-select-wrap">
-            <select class="rf-select" id="refCredentials" name="refCredentials" required>
-              <option value="">Select</option>
-              <option>MD</option><option>DO</option><option>OD</option>
-              <option>PA</option><option>NP</option><option>Other</option>
-            </select>
-            </div>
-          </div>
-          <div class="rf-field">
-            <label for="refEmail">Office Email <span class="rf-req">*</span></label>
-            <input class="rf-input" id="refEmail" name="refEmail" type="email" required>
-          </div>
-
-          <div class="rf-field">
-            <label for="refPhone">Office Phone <span class="rf-req">*</span></label>
-            <input class="rf-input" id="refPhone" name="refPhone" type="tel" placeholder="(xxx) xxx-xxxx" required>
-          </div>
-          <div class="rf-field">
-            <label for="refFax">Office Fax</label>
-            <input class="rf-input" id="refFax" name="refFax" type="tel">
-          </div>
-
-          <div class="rf-field rf-g-full">
-            <label for="refAddress">Street Address</label>
-            <input class="rf-input" id="refAddress" name="refAddress" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="refCity">City</label>
-            <input class="rf-input" id="refCity" name="refCity" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="refStateZip">State & ZIP</label>
-            <input class="rf-input" id="refStateZip" name="refStateZip" type="text" placeholder="CA 90210">
+        </div>
+        <div>
+          <h3 class="rf-simple-h-sub">Suggested procedure</h3>
+          <div class="rf-choice-stack">
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="SMILE Laser"><span>SMILE Laser</span></label>
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="LASIK / custom corneal laser"><span>LASIK / custom corneal laser</span></label>
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="EVO ICL"><span>EVO ICL</span></label>
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="PIE / presbyopic implant in eye"><span>PIE / presbyopic implant in eye</span></label>
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="Keratoconus evaluation (EpiOXA)"><span>Keratoconus evaluation (EpiOXA)</span></label>
+            <label class="rf-choice rf-choice--indent"><input type="checkbox" name="procedure" value="CTAK"><span>CTAK</span></label>
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="Cosmetic pterygium"><span>Cosmetic pterygium</span></label>
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="Robotic laser cataract surgery"><span>Robotic laser cataract surgery</span></label>
+            <label class="rf-choice"><input type="checkbox" name="procedure" value="Second opinion / complex candidacy"><span>Second opinion / complex candidacy</span></label>
           </div>
         </div>
       </div>
-    </details>
+      <p class="rf-muted-note">Select at least one item under diagnosis <em>or</em> suggested procedure.</p>
+    </section>
 
-    <details class="rf-step" open>
-      <summary>
-        <span class="rf-step-num">2</span>
-        <span class="rf-step-title">Patient Demographics & Contact</span>
-        <svg class="rf-step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="rf-step-body">
-        <div class="rf-g2">
-          <div class="rf-field">
-            <label for="patientFirstName">First Name <span class="rf-req">*</span></label>
-            <input class="rf-input" id="patientFirstName" name="patientFirstName" type="text" required>
-          </div>
-          <div class="rf-field">
-            <label for="patientLastName">Last Name <span class="rf-req">*</span></label>
-            <input class="rf-input" id="patientLastName" name="patientLastName" type="text" required>
-          </div>
-          <div class="rf-field">
-            <label for="patientDob">Date of Birth <span class="rf-req">*</span></label>
-            <input class="rf-input" id="patientDob" name="patientDob" type="date" required>
-          </div>
-          <div class="rf-field">
-            <label for="patientGender">Gender</label>
-            <div class="rf-select-wrap">
-            <select class="rf-select" id="patientGender" name="patientGender">
-              <option value="">Select</option>
-              <option>Female</option><option>Male</option>
-              <option>Non-binary</option><option>Prefer not to say</option>
-            </select>
-            </div>
-          </div>
-          <div class="rf-field">
-            <label for="patientPhone">Phone <span class="rf-req">*</span></label>
-            <input class="rf-input" id="patientPhone" name="patientPhone" type="tel" required>
-          </div>
-          <div class="rf-field">
-            <label for="patientEmail">Email</label>
-            <input class="rf-input" id="patientEmail" name="patientEmail" type="email">
-          </div>
-          <div class="rf-field rf-g-full">
-            <label for="patientAddress">Street Address</label>
-            <input class="rf-input" id="patientAddress" name="patientAddress" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="patientCity">City</label>
-            <input class="rf-input" id="patientCity" name="patientCity" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="patientStateZip">State & ZIP</label>
-            <input class="rf-input" id="patientStateZip" name="patientStateZip" type="text" placeholder="CA 90210">
-          </div>
-          <div class="rf-field">
-            <label for="interpreterNeeded">Interpreter Needed</label>
-            <div class="rf-select-wrap">
-            <select class="rf-select" id="interpreterNeeded" name="interpreterNeeded">
-              <option value="No">No</option><option value="Yes">Yes</option>
-            </select>
-            </div>
-          </div>
-          <div class="rf-field" id="rf-lang-wrap" hidden>
-            <label for="interpreterLanguage">Language</label>
-            <input class="rf-input" id="interpreterLanguage" name="interpreterLanguage" type="text" placeholder="e.g. Spanish">
-          </div>
+    <section class="rf-simple-card" aria-labelledby="rf-upload-h">
+      <h2 class="rf-simple-h" id="rf-upload-h">Uploads, shared care &amp; clinical data</h2>
+      <div class="rf-g2 rf-g2--files">
+        <div class="rf-field">
+          <label for="uploadInsurance">Upload insurance</label>
+          <input class="rf-file-input" id="uploadInsurance" name="uploadInsurance" type="file"
+            accept=".png,.jpg,.jpeg,.bmp,.mp4,.webm,.mov,.pdf,.doc,.docx,image/png,image/jpeg,image/bmp,video/mp4,video/webm,video/quicktime,application/pdf">
         </div>
-
-        <hr class="rf-divider">
-        <p class="rf-sub">Insurance (optional)</p>
-        <div class="rf-g3">
-          <div class="rf-field">
-            <label for="primaryInsurance">Primary Insurance</label>
-            <input class="rf-input" id="primaryInsurance" name="primaryInsurance" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="primaryInsuranceId">Member ID</label>
-            <input class="rf-input" id="primaryInsuranceId" name="primaryInsuranceId" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="primaryGroup">Group #</label>
-            <input class="rf-input" id="primaryGroup" name="primaryGroup" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="secondaryInsurance">Secondary Insurance</label>
-            <input class="rf-input" id="secondaryInsurance" name="secondaryInsurance" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="secondaryInsuranceId">Member ID</label>
-            <input class="rf-input" id="secondaryInsuranceId" name="secondaryInsuranceId" type="text">
-          </div>
-          <div class="rf-field">
-            <label for="secondaryGroup">Group #</label>
-            <input class="rf-input" id="secondaryGroup" name="secondaryGroup" type="text">
-          </div>
+        <div class="rf-field">
+          <label for="uploadClinicalChart">Upload clinical chart</label>
+          <input class="rf-file-input" id="uploadClinicalChart" name="uploadClinicalChart" type="file"
+            accept=".png,.jpg,.jpeg,.bmp,.mp4,.webm,.mov,.pdf,.doc,.docx,image/png,image/jpeg,image/bmp,video/mp4,video/webm,video/quicktime,application/pdf">
         </div>
       </div>
-    </details>
 
-    <details class="rf-step" open>
-      <summary>
-        <span class="rf-step-num">3</span>
-        <span class="rf-step-title">Clinical Pathway & Appointment</span>
-        <svg class="rf-step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="rf-step-body">
+      <p class="rf-sub rf-sub--tight">Shared care</p>
+      <div class="rf-choice-stack rf-choice-stack--compact">
+        <label class="rf-choice"><input type="checkbox" name="sharedCare" value="I will comanage as soon as medically appropriate"><span>I will comanage as soon as medically appropriate</span></label>
+        <label class="rf-choice"><input type="checkbox" name="sharedCare" value="KVI do post op and return for general eye care"><span>KVI do post op &amp; return for general eye care</span></label>
+      </div>
 
-        <p class="rf-sub">Intended procedure / pathway <span class="rf-req">*</span></p>
-        <div class="rf-check-grid" role="group" aria-label="Consultation type">
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Cataract / Lens evaluation"><span>Cataract / Lens evaluation</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Robotic Laser Cataract consult"><span>Robotic Laser Cataract consult</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="LASIK consult"><span>LASIK consult</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="SMILE consult"><span>SMILE consult</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="PRK / ASA consult"><span>PRK / ASA consult</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="EVO ICL / Implantable lens"><span>EVO ICL / Implantable lens</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="PIE / RLE — Presbyopia lens"><span>PIE / RLE — Presbyopia lens</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Keratoconus / CTAK / CXL"><span>Keratoconus / CTAK / CXL</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Cornea evaluation"><span>Cornea evaluation</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Glaucoma evaluation"><span>Glaucoma evaluation</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Dry eye evaluation"><span>Dry eye evaluation</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Pterygium surgery"><span>Pterygium surgery</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Chalazion treatment"><span>Chalazion treatment</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Retina evaluation"><span>Retina evaluation</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Oculoplastics evaluation"><span>Oculoplastics evaluation</span></label>
-          <label class="rf-choice"><input type="checkbox" name="consultType" value="Other / multi-focus consult"><span>Other / multi-focus consult</span></label>
-        </div>
+      <p class="rf-sub rf-sub--tight">Clinical data available</p>
+      <div class="rf-check-grid rf-check-grid--clinical">
+        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Manifest / cycloplegic refraction"><span>Manifest / cycloplegic refraction</span></label>
+        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Topography / tomography"><span>Topography / tomography</span></label>
+        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="OCT"><span>OCT</span></label>
+        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Pachymetry"><span>Pachymetry</span></label>
+        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Pentacam"><span>Pentacam</span></label>
+        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Corneal mapping"><span>Corneal mapping</span></label>
+        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Photos"><span>Photos</span></label>
+      </div>
+    </section>
 
-        <div class="rf-split">
-          <div>
-            <p class="rf-sub">Preferred provider <span class="rf-req">*</span></p>
-            <div class="rf-choice-col">
-              <label class="rf-choice"><input type="radio" name="preferredPhysician" value="No preference / first available" required><span>No preference / first available</span></label>
-              <label class="rf-choice"><input type="radio" name="preferredPhysician" value="Dr. Rajesh Khanna, MD"><span>Dr. Rajesh Khanna, MD</span></label>
-            </div>
-          </div>
-          <div>
-            <p class="rf-sub">Preferred location(s) <span class="rf-req">*</span></p>
-            <div class="rf-choice-col">
-              <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Any"><span>Any / either office</span></label>
-              <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Beverly Hills"><span>Beverly Hills</span></label>
-              <label class="rf-choice"><input type="checkbox" name="preferredLocation" value="Westlake Village"><span>Westlake Village</span></label>
-            </div>
+    <section class="rf-simple-card" aria-labelledby="rf-submit-h">
+      <h2 class="rf-simple-h" id="rf-submit-h">Instructions &amp; submit</h2>
+      <div class="rf-field rf-g-full">
+        <label for="specialInstructions">Special instructions</label>
+        <textarea class="rf-textarea rf-textarea--short" id="specialInstructions" name="specialInstructions" maxlength="2000"
+          placeholder="Timing preferences, urgency context, language needs…"></textarea>
+      </div>
+      <div class="rf-g2">
+        <div class="rf-field">
+          <label for="preferredDoctor">Doctor name <span class="rf-req">*</span></label>
+          <div class="rf-select-wrap">
+            <select class="rf-select" id="preferredDoctor" name="preferredDoctor" required>
+              <option value="">Select</option>
+              <option>Dr. Rajesh Khanna, MD</option>
+              <option>No preference / first available</option>
+            </select>
           </div>
         </div>
-
-        <hr class="rf-divider">
-        <p class="rf-sub">
-          Urgent referral? <span class="rf-req">*</span>
-          <span class="rf-urgency-hint">
-            — pain, severe redness, sudden vision loss, flashes, floaters, trauma
-          </span>
-        </p>
-        <div class="rf-urgency-row">
-          <label class="rf-choice"><input type="radio" name="urgentReferral" value="Yes" required><span>Yes — clinically urgent</span></label>
-          <label class="rf-choice"><input type="radio" name="urgentReferral" value="No"><span>No — routine consult</span></label>
-        </div>
-
-        <div class="rf-field" style="margin-top:18px;">
-          <label for="clinicalNotes">Clinical / scheduling notes</label>
-          <textarea class="rf-textarea" id="clinicalNotes" name="clinicalNotes" maxlength="1000"
-            placeholder="Prior ocular surgery, lens status, IOP, VA, allergies, current meds, relevant history, co-management asks…"></textarea>
-        </div>
-
-        <div class="rf-file-note">
-          <p class="rf-file-note-head">Attach topography / OCT / referral notes (reference only)</p>
-          <ul>
-            <li>Important information only — do not transmit PHI without encrypted relay</li>
-            <li>Accepted: PDF, JPG, PNG, TIFF — max 10 MB each</li>
-            <li>File names: letters, numbers, hyphens, underscores only — no spaces</li>
-          </ul>
+        <div class="rf-field">
+          <label for="submittedBy">Who is submitting <span class="rf-req">*</span></label>
+          <input class="rf-input" id="submittedBy" name="submittedBy" type="text" placeholder="Staff name &amp; role" required>
         </div>
       </div>
-    </details>
+    </section>
 
-    <details class="rf-step" open>
-      <summary>
-        <span class="rf-step-num">4</span>
-        <span class="rf-step-title">Co-Management Preferences</span>
-        <svg class="rf-step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="rf-step-body">
-        <p class="rf-lead-muted">
-          If surgery is recommended, how would you like to collaborate on post-operative care?
-          Our team will confirm what is medically appropriate and will always respect your relationship with the patient.
-        </p>
-        <div class="rf-g2">
-          <div class="rf-field rf-g-full">
-            <label for="coManagePostOp">Desired post-op co-management</label>
-            <div class="rf-select-wrap">
-            <select class="rf-select" id="coManagePostOp" name="coManagePostOp">
-              <option value="">Select</option>
-              <option>Yes — I would like to co-manage post-op care</option>
-              <option>No — KVI to manage full post-op period</option>
-              <option>Discuss with surgeon</option>
-              <option>Not sure yet</option>
-            </select>
-            </div>
-          </div>
-          <div class="rf-field rf-g-full">
-            <label for="coManageNotes">Who should receive written clinical updates?</label>
-            <div class="rf-select-wrap">
-            <select class="rf-select" id="coManageNotes" name="coManageNotes">
-              <option value="">Select</option>
-              <option>Referring doctor only</option>
-              <option>Referring doctor + office manager</option>
-              <option>Office manager only</option>
-              <option>No updates needed</option>
-            </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    </details>
+    <p class="rf-file-formats">Supported file formats: png, jpg, jpeg, bmp, mp4, webm, mov, pdf, doc, and docx.</p>
 
     <div class="rf-action-bar">
       <div class="rf-bar-left">
@@ -363,7 +205,7 @@
       <div class="rf-bar-right">
         <span class="rf-bar-meta">Khanna Vision Institute · Physician referral worksheet</span>
         <button type="submit" class="rf-submit" id="rf-submit">
-          Submit Referral
+          Schedule now or submit
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
       </div>
@@ -410,14 +252,6 @@
   var form = document.getElementById('rf-form');
   var msg = document.getElementById('rf-msg');
   var submit = document.getElementById('rf-submit');
-  var interp = document.getElementById('interpreterNeeded');
-  var langWr = document.getElementById('rf-lang-wrap');
-
-  function syncInterp() {
-    if (!interp || !langWr) return;
-    langWr.hidden = interp.value !== 'Yes';
-  }
-  if (interp) { interp.addEventListener('change', syncInterp); syncInterp(); }
 
   function flash(kind, text) {
     msg.className = 'rf-alert rf-alert--' + kind;
@@ -430,11 +264,16 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var errs = [];
-    if (!form.querySelector('[name="refDoctorName"]').value.trim()) errs.push('Doctor name is required.');
-    if (!form.querySelectorAll('input[name="consultType"]:checked').length) errs.push('Select at least one procedure / pathway.');
+    var pn = form.querySelector('[name="patientName"]');
+    if (!pn || !pn.value.trim()) errs.push('Patient name is required.');
+    if (!form.querySelector('[name="patientPhone"]').value.trim()) errs.push('Phone is required.');
+    if (!form.querySelector('[name="patientEmail"]').value.trim()) errs.push('Email is required.');
     if (!form.querySelectorAll('input[name="preferredLocation"]:checked').length) errs.push('Select at least one preferred location.');
-    if (!form.querySelector('input[name="preferredPhysician"]:checked')) errs.push('Select a preferred provider.');
-    if (!form.querySelector('input[name="urgentReferral"]:checked')) errs.push('Indicate whether this is an urgent referral.');
+    var dx = form.querySelectorAll('input[name="diagnosis"]:checked').length;
+    var proc = form.querySelectorAll('input[name="procedure"]:checked').length;
+    if (!dx && !proc) errs.push('Select at least one diagnosis or suggested procedure.');
+    if (!form.querySelector('[name="preferredDoctor"]').value.trim()) errs.push('Select a doctor.');
+    if (!form.querySelector('[name="submittedBy"]').value.trim()) errs.push('Who is submitting is required.');
     if (errs.length) { flash('err', errs[0]); return; }
 
     submit.disabled = true;
@@ -442,15 +281,15 @@
 
     fetch('/api/physician-referral/submit', {
       method: 'POST',
-      body: new URLSearchParams(new FormData(form)),
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' },
       credentials: 'same-origin'
     })
     .then(function (r) { return r.text().then(function (t) { var d = {}; try { d = JSON.parse(t); } catch (x) {} return { ok: r.ok, data: d }; }); })
     .then(function (res) {
       submit.disabled = false;
       if (res.ok && res.data && res.data.success) {
-        form.reset(); syncInterp();
+        form.reset();
         flash('ok', 'Referral submitted — our team will follow up at the contacts provided.');
       } else {
         flash('err', (res.data && res.data.message) || 'Could not submit. Please call (805) 230-2126.');
