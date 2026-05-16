@@ -2013,7 +2013,18 @@ body.kvi-brochure {
   color: rgba(148, 163, 184, 0.95);
 }
 
-.kvi-brochure .rf-upload-pair,
+.kvi-brochure .rf-upload-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+.kvi-brochure .rf-upload-cell {
+  min-width: 0;
+}
+
 .kvi-brochure .rf-shared-clinical-split {
   display: grid;
   grid-template-columns: 1fr;
@@ -2029,13 +2040,8 @@ body.kvi-brochure {
   min-width: 0;
 }
 
-.kvi-brochure .rf-shared-care-row {
-  margin-top: 24px;
-  width: 100%;
-}
-
 .kvi-brochure .rf-field--shared-care {
-  max-width: 520px;
+  max-width: none;
 }
 
 .kvi-brochure .rf-clinical-bundle {
@@ -2114,7 +2120,35 @@ body.kvi-brochure {
 }
 
 @media (min-width: 641px) {
-  .kvi-brochure .rf-upload-pair,
+  .kvi-brochure .rf-upload-pair {
+    grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.45fr);
+    grid-template-rows: auto auto;
+    column-gap: 28px;
+    row-gap: 24px;
+  }
+
+  .kvi-brochure .rf-upload-cell--insurance {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .kvi-brochure .rf-upload-cell--chart {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .kvi-brochure .rf-upload-cell--shared-care {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .kvi-brochure .rf-upload-cell--clinical-data {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+
   .kvi-brochure .rf-shared-clinical-split {
     grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.45fr);
     gap: 28px;

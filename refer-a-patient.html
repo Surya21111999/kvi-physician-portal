@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,700;1,700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260531">
+  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260532">
 </head>
 <body class="kvi-brochure">
 
@@ -121,7 +121,7 @@
       <h2 class="rf-simple-h" id="rf-upload-h">Uploads, shared care &amp; clinical data</h2>
 
       <div class="rf-upload-pair">
-        <div class="rf-upload-ins-col">
+        <div class="rf-upload-cell rf-upload-cell--insurance rf-upload-ins-col">
           <div class="rf-field">
             <label for="uploadInsurance">Upload insurance</label>
             <input class="rf-file-input" id="uploadInsurance" name="uploadInsurance" type="file"
@@ -129,12 +129,26 @@
           </div>
           <p class="rf-file-formats rf-file-formats--inline">Supported file formats: png, jpg, jpeg, bmp, mp4, webm, mov, pdf, doc, and docx.</p>
         </div>
-        <div class="rf-clinical-bundle">
+        <div class="rf-upload-cell rf-upload-cell--chart">
           <div class="rf-field">
             <label for="uploadClinicalChart">Upload clinical chart <span class="rf-hint-inline">(multiple files allowed)</span></label>
             <input class="rf-file-input" id="uploadClinicalChart" name="uploadClinicalChart" type="file" multiple
               accept=".png,.jpg,.jpeg,.bmp,.mp4,.webm,.mov,.pdf,.doc,.docx,image/png,image/jpeg,image/bmp,video/mp4,video/webm,video/quicktime,application/pdf">
           </div>
+        </div>
+        <div class="rf-upload-cell rf-upload-cell--shared-care">
+          <div class="rf-field rf-field--shared-care">
+            <label for="sharedCare">Shared care</label>
+            <div class="rf-select-wrap">
+              <select class="rf-select" id="sharedCare" name="sharedCare">
+                <option value="">Select an option</option>
+                <option value="comanage">I will comanage as soon as medically appropriate</option>
+                <option value="kvi-postop">KVI do post op &amp; return for general eye care</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="rf-upload-cell rf-upload-cell--clinical-data rf-clinical-bundle">
           <p class="rf-sub rf-sub--clinical-cap">Clinical data available</p>
           <div class="rf-check-grid rf-check-grid--clinical">
             <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Manifest / cycloplegic refraction"><span>Manifest / cycloplegic refraction</span></label>
@@ -144,19 +158,6 @@
             <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Pentacam"><span>Pentacam</span></label>
             <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Corneal mapping"><span>Corneal mapping</span></label>
             <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Photos"><span>Photos</span></label>
-          </div>
-        </div>
-      </div>
-
-      <div class="rf-shared-care-row">
-        <div class="rf-field rf-field--shared-care">
-          <label for="sharedCare">Shared care</label>
-          <div class="rf-select-wrap">
-            <select class="rf-select" id="sharedCare" name="sharedCare">
-              <option value="">Select an option</option>
-              <option value="comanage">I will comanage as soon as medically appropriate</option>
-              <option value="kvi-postop">KVI do post op &amp; return for general eye care</option>
-            </select>
           </div>
         </div>
       </div>
