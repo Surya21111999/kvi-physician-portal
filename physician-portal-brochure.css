@@ -782,8 +782,8 @@ body.kvi-brochure {
   margin-left: 0;
   z-index: 1;
   position: relative;
-  height: 108px;
-  max-height: 108px;
+  height: 88px;
+  max-height: 88px;
   border-radius: 0 11px 11px 0;
   overflow: hidden;
   border: 1px solid rgba(15, 23, 42, 0.1);
