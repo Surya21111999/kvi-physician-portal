@@ -10,9 +10,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:wght@700&family=Montserrat:wght@500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <!-- Same-folder CSS so uploads to any subdirectory still load (root-absolute paths can 404 on some mirrors). Bump ?v after edits. -->
-  <link rel="stylesheet" href="./physician-hub.css?v=20260624">
+  <link rel="stylesheet" href="./physician-hub.css?v=20260626">
+  <!-- Fallback: equal-height tiles even when an old cached stylesheet is still partly applied -->
+  <style id="kvi-hub-card-height-lock">
+@media (min-width: 481px) {
+  body#kvi-physician-hub .fp-hub-card-grid {
+    align-items: stretch !important;
+    grid-auto-rows: minmax(20rem, auto) !important;
+  }
+  body#kvi-physician-hub .fp-hub-card-grid > li {
+    display: flex !important;
+    min-height: 0 !important;
+  }
+  body#kvi-physician-hub .fp-hub-task-card {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    min-height: 20rem !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+  </style>
 </head>
-<body class="kvi-brochure fp-phys-hub" id="kvi-physician-hub" data-build="physician-hub-20260624">
+<body class="kvi-brochure fp-phys-hub" id="kvi-physician-hub" data-build="physician-hub-20260626">
 
 <header class="kh-header fp-hub-header">
   <div class="kh-header-inner fp-hub-header-inner">
