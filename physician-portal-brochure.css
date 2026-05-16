@@ -2013,12 +2013,29 @@ body.kvi-brochure {
   color: rgba(148, 163, 184, 0.95);
 }
 
+.kvi-brochure .rf-upload-pair,
 .kvi-brochure .rf-shared-clinical-split {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
   align-items: start;
   width: 100%;
+}
+
+.kvi-brochure .rf-upload-ins-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.kvi-brochure .rf-shared-care-row {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.kvi-brochure .rf-field--shared-care {
+  max-width: 520px;
 }
 
 .kvi-brochure .rf-clinical-bundle {
@@ -2057,6 +2074,18 @@ body.kvi-brochure {
   margin: 0;
 }
 
+.kvi-brochure .rf-action-bar--dual .rf-schedule-cta,
+.kvi-brochure .rf-action-bar--dual .rf-submit {
+  flex: 1 1 0;
+  min-width: min(200px, 100%);
+  max-width: 280px;
+  min-height: 52px;
+  padding: 14px 22px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-self: stretch;
+}
+
 .kvi-brochure .rf-schedule-cta {
   display: inline-flex;
   align-items: center;
@@ -2085,6 +2114,7 @@ body.kvi-brochure {
 }
 
 @media (min-width: 641px) {
+  .kvi-brochure .rf-upload-pair,
   .kvi-brochure .rf-shared-clinical-split {
     grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.45fr);
     gap: 28px;
@@ -2111,5 +2141,12 @@ body.kvi-brochure {
 
   .kvi-brochure .rf-check-grid--clinical {
     grid-template-columns: 1fr;
+  }
+
+  .kvi-brochure .rf-action-bar--dual .rf-schedule-cta,
+  .kvi-brochure .rf-action-bar--dual .rf-submit {
+    flex: 1 1 100%;
+    max-width: none;
+    width: 100%;
   }
 }
