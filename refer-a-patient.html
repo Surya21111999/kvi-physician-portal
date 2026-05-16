@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,700;1,700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260528">
+  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260529">
 </head>
 <body class="kvi-brochure">
 
@@ -42,30 +42,12 @@
 <div class="rf-page rf-page--wide">
 
 <div class="rf-hero">
-  <div class="rf-hero-eyebrow">For Referring Providers</div>
   <h1>Physician Referral <em>Worksheet</em></h1>
   <div class="kv-rule" aria-hidden="true"></div>
-  <p class="rf-hero-sub">
-    Complete the fields below. Patient?
-    <a href="/kvi-physician-portal/book-consultation">Schedule online</a>
-    <span aria-hidden="true"> · </span>
-    or call
-    <a class="rf-tel" href="tel:8052302126">(805) 230-2126</a>.
-  </p>
-</div>
-
-<div class="rf-phi-wrap">
-  <div class="rf-phi" role="note">
-    <span class="rf-phi-icon">⚠</span>
-    <span>
-      <strong>PHI Notice:</strong> Do not email identifiable records from a non-compliant client.
-      Pair this summary with secure fax, encrypted relay, your EHR tether, or direct upload workflow.
-    </span>
-  </div>
-  <div id="rf-msg" class="rf-alert" role="status" aria-live="polite"></div>
 </div>
 
 <div class="rf-form-wrap">
+  <div id="rf-msg" class="rf-alert" role="status" aria-live="polite"></div>
   <form id="rf-form" action="/api/physician-referral/submit" method="post" enctype="multipart/form-data" novalidate>
     <input type="text" name="companyWebsite" value=""
       style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"
@@ -137,34 +119,45 @@
 
     <section class="rf-simple-card" aria-labelledby="rf-upload-h">
       <h2 class="rf-simple-h" id="rf-upload-h">Uploads, shared care &amp; clinical data</h2>
-      <div class="rf-g2 rf-g2--files">
-        <div class="rf-field">
-          <label for="uploadInsurance">Upload insurance</label>
-          <input class="rf-file-input" id="uploadInsurance" name="uploadInsurance" type="file"
-            accept=".png,.jpg,.jpeg,.bmp,.mp4,.webm,.mov,.pdf,.doc,.docx,image/png,image/jpeg,image/bmp,video/mp4,video/webm,video/quicktime,application/pdf">
-        </div>
-        <div class="rf-field">
-          <label for="uploadClinicalChart">Upload clinical chart</label>
-          <input class="rf-file-input" id="uploadClinicalChart" name="uploadClinicalChart" type="file"
-            accept=".png,.jpg,.jpeg,.bmp,.mp4,.webm,.mov,.pdf,.doc,.docx,image/png,image/jpeg,image/bmp,video/mp4,video/webm,video/quicktime,application/pdf">
-        </div>
+
+      <div class="rf-field rf-field--insurance">
+        <label for="uploadInsurance">Upload insurance</label>
+        <input class="rf-file-input" id="uploadInsurance" name="uploadInsurance" type="file"
+          accept=".png,.jpg,.jpeg,.bmp,.mp4,.webm,.mov,.pdf,.doc,.docx,image/png,image/jpeg,image/bmp,video/mp4,video/webm,video/quicktime,application/pdf">
       </div>
 
-      <p class="rf-sub rf-sub--tight">Shared care</p>
-      <div class="rf-choice-stack rf-choice-stack--compact">
-        <label class="rf-choice"><input type="checkbox" name="sharedCare" value="I will comanage as soon as medically appropriate"><span>I will comanage as soon as medically appropriate</span></label>
-        <label class="rf-choice"><input type="checkbox" name="sharedCare" value="KVI do post op and return for general eye care"><span>KVI do post op &amp; return for general eye care</span></label>
-      </div>
+      <p class="rf-file-formats rf-file-formats--inline">Supported file formats: png, jpg, jpeg, bmp, mp4, webm, mov, pdf, doc, and docx.</p>
 
-      <p class="rf-sub rf-sub--tight">Clinical data available</p>
-      <div class="rf-check-grid rf-check-grid--clinical">
-        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Manifest / cycloplegic refraction"><span>Manifest / cycloplegic refraction</span></label>
-        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Topography / tomography"><span>Topography / tomography</span></label>
-        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="OCT"><span>OCT</span></label>
-        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Pachymetry"><span>Pachymetry</span></label>
-        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Pentacam"><span>Pentacam</span></label>
-        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Corneal mapping"><span>Corneal mapping</span></label>
-        <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Photos"><span>Photos</span></label>
+      <div class="rf-shared-clinical-split">
+        <div class="rf-shared-col">
+          <div class="rf-field">
+            <label for="sharedCare">Shared care</label>
+            <div class="rf-select-wrap">
+              <select class="rf-select" id="sharedCare" name="sharedCare">
+                <option value="">Select an option</option>
+                <option value="comanage">I will comanage as soon as medically appropriate</option>
+                <option value="kvi-postop">KVI do post op &amp; return for general eye care</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="rf-clinical-bundle">
+          <div class="rf-field">
+            <label for="uploadClinicalChart">Upload clinical chart <span class="rf-hint-inline">(multiple files allowed)</span></label>
+            <input class="rf-file-input" id="uploadClinicalChart" name="uploadClinicalChart" type="file" multiple
+              accept=".png,.jpg,.jpeg,.bmp,.mp4,.webm,.mov,.pdf,.doc,.docx,image/png,image/jpeg,image/bmp,video/mp4,video/webm,video/quicktime,application/pdf">
+          </div>
+          <p class="rf-sub rf-sub--clinical-cap">Clinical data available</p>
+          <div class="rf-check-grid rf-check-grid--clinical">
+            <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Manifest / cycloplegic refraction"><span>Manifest / cycloplegic refraction</span></label>
+            <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Topography / tomography"><span>Topography / tomography</span></label>
+            <label class="rf-choice"><input type="checkbox" name="clinicalData" value="OCT"><span>OCT</span></label>
+            <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Pachymetry"><span>Pachymetry</span></label>
+            <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Pentacam"><span>Pentacam</span></label>
+            <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Corneal mapping"><span>Corneal mapping</span></label>
+            <label class="rf-choice"><input type="checkbox" name="clinicalData" value="Photos"><span>Photos</span></label>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -193,26 +186,19 @@
       </div>
     </section>
 
-    <p class="rf-file-formats">Supported file formats: png, jpg, jpeg, bmp, mp4, webm, mov, pdf, doc, and docx.</p>
-
-    <div class="rf-action-bar">
-      <div class="rf-bar-left">
-        <a class="rf-bar-btn" href="/kvi-physician-portal/for-physicians"><span class="rf-bar-ico" aria-hidden="true">←</span> Physician Hub</a>
-        <a class="rf-bar-btn" href="/kvi-physician-portal/book-consultation">Online Scheduler</a>
-        <button type="reset" class="rf-bar-btn rf-bar-btn--reset">
-          <svg class="rf-bar-reset-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-7.7L3 8"/><path d="M3 3v5h5"/></svg>
-          Reset form
-        </button>
-      </div>
-      <div class="rf-bar-right">
-        <span class="rf-bar-meta">Khanna Vision Institute · Physician referral worksheet</span>
-        <button type="submit" class="rf-submit" id="rf-submit">
-          Schedule now or submit
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-      </div>
+    <div class="rf-action-bar rf-action-bar--dual">
+      <a class="rf-schedule-cta" href="/kvi-physician-portal/book-consultation">Schedule now</a>
+      <button type="submit" class="rf-submit" id="rf-submit">Submit</button>
     </div>
   </form>
+
+  <div class="rf-phi rf-phi--footer" role="note">
+    <span class="rf-phi-icon">⚠</span>
+    <span>
+      <strong>PHI Notice:</strong> Do not email identifiable records from a non-compliant client.
+      Pair this summary with secure fax, encrypted relay, your EHR tether, or direct upload workflow.
+    </span>
+  </div>
 </div>
 
 </div>

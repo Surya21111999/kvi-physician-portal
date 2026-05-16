@@ -1997,7 +1997,99 @@ body.kvi-brochure {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
+.kvi-brochure .rf-file-formats--inline {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  text-align: left;
+  color: var(--kv-muted);
+}
+
+.kvi-brochure .rf-hint-inline {
+  font-weight: 500;
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.kvi-brochure .rf-shared-clinical-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+.kvi-brochure .rf-clinical-bundle {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.kvi-brochure .rf-sub--clinical-cap {
+  margin: 0 !important;
+  padding-top: 2px;
+}
+
+.kvi-brochure .rf-phi--footer {
+  margin: 32px auto 0;
+  max-width: 920px;
+  padding: 0 18px 8px;
+}
+
+.kvi-brochure .rf-form-wrap > #rf-msg.rf-alert {
+  margin-bottom: 12px;
+}
+
+.kvi-brochure .rf-action-bar--dual {
+  position: static !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  margin-top: 6px;
+}
+
+.kvi-brochure .rf-action-bar--dual .rf-submit {
+  margin: 0;
+}
+
+.kvi-brochure .rf-schedule-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #f8fafc;
+  background: linear-gradient(120deg, var(--kv-teal-deep), #0f766e 45%, #155e75);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  box-shadow: 0 10px 26px rgba(15, 118, 110, 0.35);
+  transition: transform 0.12s, box-shadow 0.15s;
+}
+
+.kvi-brochure .rf-schedule-cta:hover {
+  transform: translateY(-1px);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.45);
+}
+
 @media (min-width: 641px) {
+  .kvi-brochure .rf-shared-clinical-split {
+    grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.45fr);
+    gap: 28px;
+  }
+
   .kvi-brochure .rf-page--wide .rf-g2 {
     grid-template-columns: 1fr 1fr;
   }
