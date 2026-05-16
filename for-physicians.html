@@ -9,38 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:wght@700&family=Montserrat:wght@500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/kvi-physician-portal/physician-portal-brochure.css?v=20260618">
-  <!-- Banner type is inlined so gold/teal shows even if CDN strips query strings from the stylesheet URL -->
-  <style id="kvi-hub-banner-typography-lock">
-body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-kicker {
-  margin: 0 0 6px;
-  font-size: 0.66rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  color: #1e4d63 !important;
-}
-body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-title {
-  margin: 0 0 6px !important;
-  font-family: "Playfair Display", "Libre Baskerville", Georgia, serif !important;
-  font-size: clamp(1.05rem, 2.25vw, 1.42rem) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.06em !important;
-  text-transform: uppercase !important;
-  color: #d4af37 !important;
-  line-height: 1.12 !important;
-}
-body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead {
-  margin: 0 !important;
-  font-size: 0.74rem !important;
-  line-height: 1.48 !important;
-  color: #45515f !important;
-}
-body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
-  color: #1e4d63 !important;
-  font-weight: 700 !important;
-}
-  </style>
+  <link rel="stylesheet" href="/kvi-physician-portal/physician-hub.css?v=20260622">
 </head>
 <body class="kvi-brochure fp-phys-hub" id="kvi-physician-hub">
 
@@ -70,9 +39,8 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
   </div>
 </header>
 
-<section class="fp-hub-banner fp-hub-banner--overlap" aria-labelledby="fp-hub-hero-h">
+<section class="fp-hub-banner" aria-labelledby="fp-hub-hero-h">
   <div class="fp-hub-banner-slab">
-    <span class="fp-hub-banner-accent" aria-hidden="true"></span>
     <div class="fp-hub-banner-row">
       <div class="fp-hub-banner-copy">
         <p class="fp-hub-banner-kicker">Welcome!</p>
@@ -88,8 +56,8 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
   </div>
 </section>
 
-<main id="hub-main" class="fp-hub-main kv-main-pad">
-  <div class="fp-wrap fp-hub-shell">
+<main id="hub-main" class="fp-hub-main">
+  <div class="fp-hub-shell">
     <div class="fp-hub-strip-mini" role="note">
       Referring clinicians — HIPAA-conscious routing: pair digital summaries with fax, relay, tethered EHR, or direct uploads your compliance team prefers.
       <a href="tel:8052302126">Call coordination →</a>
@@ -100,14 +68,15 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
         <h2 class="fp-hub-grid-title" id="fp-hub-grid-h">What would you like to do?</h2>
         <p class="fp-hub-grid-sub">Tools modeled for busy offices — aligned with Khanna Vision Institute pathways.</p>
       </div>
+
       <ul class="fp-hub-card-grid">
         <li>
           <a class="fp-hub-task-card" href="/kvi-physician-portal/book-consultation">
             <span class="fp-hub-task-ico" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M34 42H14a4 4 0 01-4-4V16a4 4 0 014-4h3"/><path d="M18 12h22v26a4 4 0 01-4 4H22"/><path d="M30 16h6"/><path d="M18 26h22"/><circle cx="32" cy="14" r="2"/></svg>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="32" height="34" rx="4"/><line x1="8" y1="18" x2="40" y2="18"/><line x1="17" y1="6" x2="17" y2="12"/><line x1="31" y1="6" x2="31" y2="12"/><line x1="16" y1="28" x2="22" y2="28"/><line x1="26" y1="28" x2="32" y2="28"/><line x1="16" y1="35" x2="22" y2="35"/></svg>
             </span>
             <span class="fp-hub-task-label">Consult / scheduling request</span>
-            <span class="fp-hub-task-hint">Secure online scheduler</span>
+            <span class="fp-hub-task-hint">Secure online scheduler — book directly for your patient</span>
           </a>
         </li>
         <li>
@@ -116,7 +85,7 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M26 34H22"/><path d="M24 10v6"/><path d="M32 38H16a8 8 0 018-18 8 8 0 018 18z"/><path d="M20 26h12"/></svg>
             </span>
             <span class="fp-hub-task-label">Documents &amp; referral form</span>
-            <span class="fp-hub-task-hint">Structured physician worksheet</span>
+            <span class="fp-hub-task-hint">Structured physician worksheet for co-managed care</span>
           </a>
         </li>
         <li>
@@ -124,17 +93,17 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
             <span class="fp-hub-task-ico" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M14 42V18h26v24a2 2 0 01-2 2H14z"/><path d="M14 18V12a4 4 0 014-4h18a4 4 0 014 4v6"/><path d="M10 42H8a4 4 0 01-4-4V26a4 4 0 014-4h4"/><path d="M38 42h2a4 4 0 004-4V26a4 4 0 00-4-4h-4"/><path d="M20 26h14M20 34h14"/></svg>
             </span>
-            <span class="fp-hub-task-label">Marketing Materials</span>
+            <span class="fp-hub-task-label">Marketing materials</span>
             <span class="fp-hub-task-hint">Brochures &amp; office-ready collateral</span>
           </a>
         </li>
         <li>
-          <a class="fp-hub-task-card fp-hub-task-card--ext" href="https://khannainstitute.com/contact/" target="_blank" rel="noopener noreferrer">
+          <a class="fp-hub-task-card" href="https://khannainstitute.com/contact/" target="_blank" rel="noopener noreferrer">
             <span class="fp-hub-task-ico" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="28" height="28" rx="3"/><path d="M10 22h28"/><path d="M18 10v6M30 10v6"/><circle cx="18" cy="30" r="1.6"/><circle cx="24" cy="30" r="1.6"/><circle cx="30" cy="30" r="1.6"/><circle cx="18" cy="36" r="1.6"/><circle cx="24" cy="36" r="1.6"/></svg>
             </span>
             <span class="fp-hub-task-label">Events</span>
-            <span class="fp-hub-task-hint">Invites · dinners · CE evenings <span class="fp-hub-mini-ext" aria-hidden="true">↗</span></span>
+            <span class="fp-hub-task-hint">Invites · dinners · CE evenings</span>
           </a>
         </li>
         <li>
@@ -149,7 +118,7 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
         <li>
           <a class="fp-hub-task-card" href="https://khannainstitute.com/contact/" target="_blank" rel="noopener noreferrer">
             <span class="fp-hub-task-ico" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="30" rx="3"/><path d="M8 18h32"/><path d="M17 26h6"/><path d="M25 26h6"/><circle cx="20" cy="34" r="1.75"/><circle cx="28" cy="34" r="1.75"/></svg>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="30" rx="3"/><path d="M8 18h32"/><path d="M17 26h6M25 26h6"/><circle cx="20" cy="34" r="1.75"/><circle cx="28" cy="34" r="1.75"/></svg>
             </span>
             <span class="fp-hub-task-label">Lunch &amp; learn</span>
             <span class="fp-hub-task-hint">Request via contact</span>
@@ -161,7 +130,7 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M28 34H38a4 4 0 004-4V18a4 4 0 00-4-4H26"/><path d="M20 42H10a4 4 0 01-4-4V22a4 4 0 014-4h12"/><path d="M12 38l8-18 10 26 5-13 11 13"/></svg>
             </span>
             <span class="fp-hub-task-label">CME</span>
-            <span class="fp-hub-task-hint">Request via contact</span>
+            <span class="fp-hub-task-hint">Continuing medical education — request via contact</span>
           </a>
         </li>
         <li>
@@ -238,7 +207,6 @@ body#kvi-physician-hub.fp-phys-hub.kvi-brochure .fp-hub-banner-lead strong {
     </div>
   </div>
 </footer>
-
 
 </body>
 </html>
