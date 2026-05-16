@@ -642,7 +642,554 @@ body.kvi-brochure {
   color: var(--kv-gold-rich);
 }
 
+/* ─── Physician Portal hub page (NVISION-inspired layout · KVI color tokens) ─── */
+.fp-phys-hub.kvi-brochure {
+  overflow-x: hidden;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header.kh-header {
+  background: rgba(6, 10, 16, 0.92);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-inner.kh-header-inner {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+  min-width: min(240px, 100%);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--kv-teal-bright);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-phone:hover {
+  color: #99f6e4;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-ico-phone {
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 16px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-links__a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(226, 232, 240, 0.75);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-links__a:hover {
+  color: var(--kv-gold-rich);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-header-links__a.fp-hub-active {
+  color: var(--kv-gold-rich);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-ext svg {
+  flex-shrink: 0;
+  opacity: 0.78;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero {
+  position: relative;
+  width: 100%;
+  min-height: min(72vw, 520px);
+  max-height: 640px;
+  background: #050810;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(6, 10, 16, 0.82) 0%,
+    rgba(6, 10, 16, 0.45) 38%,
+    rgba(6, 10, 16, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-card-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 56px) 24px clamp(100px, 14vw, 120px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  min-height: min(72vw, 520px);
+  box-sizing: border-box;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-card {
+  max-width: min(420px, 92vw);
+  padding: 22px 22px 24px;
+  border-radius: 14px;
+  background: rgba(9, 14, 24, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-kicker {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-h {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--kv-gold-rich);
+  line-height: 1.15;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-copy {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(226, 232, 240, 0.88);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-copy strong {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.12s, box-shadow 0.15s, filter 0.15s;
+  white-space: nowrap;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-pill:hover {
+  transform: translateY(-1px);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-pill--teal {
+  color: #ecfeff;
+  background: linear-gradient(120deg, var(--kv-teal-deep), #0f766e 45%, #155e75);
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.35);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-pill--gold {
+  color: #0b1324;
+  background: linear-gradient(120deg, #fde68a, var(--kv-gold-rich) 52%, var(--kv-orange));
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.22);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-pill--outline {
+  color: #fefce8;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-pill--outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-main {
+  padding-top: 0;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-shell {
+  padding-top: 28px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-strip-mini {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: rgba(148, 163, 184, 0.95);
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 28px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-strip-mini a {
+  margin-left: 10px;
+  color: var(--kv-teal-bright);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-strip-mini a:hover {
+  text-decoration: underline;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-grid-section {
+  margin-bottom: 36px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-grid-head {
+  margin-bottom: 18px;
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-grid-title {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--kv-gold-rich);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-grid-sub {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--kv-muted);
+  line-height: 1.6;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-card-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-task-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  min-height: 168px;
+  padding: 22px 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--kv-outline);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.15s,
+    border-color 0.15s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-task-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(212, 175, 55, 0.12);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-task-card:focus-visible {
+  outline: 2px solid var(--kv-teal-bright);
+  outline-offset: 3px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-task-ico {
+  width: 52px;
+  height: 52px;
+  color: var(--kv-teal-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-task-ico svg {
+  width: 100%;
+  height: 100%;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-task-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  line-height: 1.35;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-task-hint {
+  font-size: 0.74rem;
+  color: var(--kv-muted);
+  line-height: 1.45;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-mini-ext {
+  font-weight: 800;
+  color: var(--kv-gold-rich);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-edu.fp-edu {
+  margin-top: 8px;
+}
+
+.fp-phys-hub.kvi-brochure .kv-rule--hub {
+  margin: 18px auto 0;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-commit-heading {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-commit-heading h2 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.16rem, 2.3vw, 1.55rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--kv-gold-rich);
+  line-height: 1.35;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-commit.fp-commit p {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fp-phys-hub.kvi-brochure .fp-commit-list--hub {
+  max-width: 820px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-commit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-locs--hub {
+  background: linear-gradient(90deg, rgba(8, 12, 20, 0.98), rgba(30, 77, 99, 0.22), rgba(8, 12, 20, 0.98));
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.fp-phys-hub.kvi-brochure .fp-loc-item--hub {
+  text-decoration: none;
+  color: rgba(248, 250, 252, 0.78);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.fp-phys-hub.kvi-brochure .fp-loc-item--hub:hover {
+  color: var(--kv-gold-rich);
+}
+
+.fp-phys-hub.kvi-brochure .kh-footer--hub {
+  padding-top: 36px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-footer-wide {
+  max-width: 1120px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-call-row {
+  text-align: center;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-call-kicker {
+  margin: 0 0 6px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.55);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-call-num {
+  font-family: "Playfair Display", "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--kv-gold-rich);
+  text-decoration: none;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-call-num:hover {
+  filter: brightness(1.08);
+}
+
+.fp-phys-hub.kvi-brochure .kh-footer-grid--hub-top {
+  grid-template-columns: minmax(0, 1.4fr) repeat(4, minmax(0, 1fr));
+  gap: 28px 24px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-brand img {
+  height: 52px;
+  width: auto;
+  max-width: 220px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-touch {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-touch-title {
+  margin: 0;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kv-gold-rich);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-touch-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-touch-links a {
+  color: rgba(255, 255, 255, 0.52);
+  text-decoration: none;
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-touch-links a:hover {
+  color: var(--kv-gold-rich);
+}
+
+.fp-phys-hub.kvi-brochure .fp-hub-social-note {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 960px) {
+  .fp-phys-hub.kvi-brochure .kh-footer-grid--hub-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 720px) {
+  .fp-phys-hub.kvi-brochure .fp-hub-header-inner.kh-header-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fp-phys-hub.kvi-brochure .fp-hub-header-actions {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .fp-phys-hub.kvi-brochure .fp-hub-header-links {
+    justify-content: flex-start;
+  }
+
+  .fp-phys-hub.kvi-brochure .fp-hub-hero {
+    min-height: 420px;
+    max-height: none;
+  }
+
+  .fp-phys-hub.kvi-brochure .fp-hub-hero-card-wrap {
+    min-height: 420px;
+    align-items: flex-end;
+    padding-bottom: 28px;
+  }
+
+  .fp-phys-hub.kvi-brochure .fp-hub-hero-card {
+    max-width: none;
+  }
+
+  .fp-phys-hub.kvi-brochure .fp-hub-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .kvi-brochure .fp-grid {
     grid-template-columns: 1fr;
   }
@@ -660,6 +1207,16 @@ body.kvi-brochure {
     min-height: 78px;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .fp-phys-hub.kvi-brochure .fp-hub-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fp-phys-hub.kvi-brochure .kh-footer-grid--hub-top {
+    grid-template-columns: 1fr;
   }
 }
 
